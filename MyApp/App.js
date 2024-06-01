@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, TextInput, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { SafeAreaView,View, Text, ScrollView, TextInput, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import TaskList from './Components/TaskList';
 import Category from './Components/Category';
@@ -22,12 +22,12 @@ const initialTasks = [
 ];
 
 const categories = [
-  { name: 'Exercise', subtitle: 'Stay Fit', icon: require('./assets/exercing2.png') },
+  { name: 'Exercise', subtitle: 'Get ready for the day', icon: require('./assets/exercing2.png') },
   { name: 'Study', icon: require('./assets/studying.png'), subtitle: 'Gain Knowledge' },
   { name: 'Code', icon: require('./assets/coding.jpeg'), subtitle: 'Build Projects' },
   { name: 'Cook', icon: require('./assets/cooking.jpeg'), subtitle: 'Make Delicious Food' },
   { name: 'Shop', icon: require('./assets/Shopping.jpeg'), subtitle: 'Get Essentials' },
-  { name: 'Read', icon: require('./assets/exercising1.jpg'), subtitle: 'Explore Stories' },
+  { name: 'Fitness time', icon: require('./assets/exercising1.jpg'), subtitle: 'Keep fit' },
   { name: 'Read', icon: require('./assets/reading.png'), subtitle: 'Gaining Knowledge' },
   { name: 'Watch movie', icon: require('./assets/movie.jpeg'), subtitle: 'Unwind and Chill' },
   { name: 'play', icon: require('./assets/football.jpeg'), subtitle: 'Release some stress' },
@@ -43,6 +43,10 @@ export default function App() {
   };
 
   return (
+
+    <SafeAreaView style={styles.safeArea}>
+
+   
     <ScrollView style={styles.container}>
       <View style={styles.header}>
         <View style={styles.headerLeft}>
@@ -52,8 +56,10 @@ export default function App() {
         <Image source={require('./assets/profile.png')} style={styles.profileImage} />
       </View>
       <View style={styles.searchBarContainer}>
-        <Image source={require('./assets/search button.png')} style={styles.searchIcon} />
+      
         <TextInput style={styles.searchBar} placeholder="Search" />
+        <Image source={require('./assets/search button.png')} style={styles.searchIcon} />
+       
         <TouchableOpacity onPress={() => {}}>
           <Image source={require('./assets/listIcon.jpg')} style={styles.listButton} />
         </TouchableOpacity>
@@ -68,11 +74,20 @@ export default function App() {
       <TaskList style={styles.sectionTitle} tasks={tasks} />
       <StatusBar style="auto" />
     </ScrollView>
+
+    </SafeAreaView>
   );
 }
 
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: '#f7f0e8',
+    marginTop: 20,
+  },
+
+
   container: {
     flex: 1,
     padding: 20,
@@ -114,22 +129,24 @@ fontWeight:'bold',
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 20,
+  
   },
   searchBar: {
     flex: 1,
     borderWidth: 1,
     borderColor: '#f7f0e8',
-    borderRadius: 5,
+    borderRadius: 20,
     padding: 10,
     marginRight: 10,
     backgroundColor: 'white',
     fontSize: 15,
     fontWeight: 'bold',
-    paddingLeft: 30,
+    paddingLeft: 50,
   },
   searchIcon: {
     position: 'absolute',
-    left: 10,
+    left: 20,
+    marginRight:"",
     width: 20,
     height: 20,
   },
