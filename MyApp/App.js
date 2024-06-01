@@ -65,9 +65,142 @@ export default function App() {
         ))}
       </View>
       <Text style={styles.sectionTitle}>Ongoing</Text>
-      <TaskList tasks={tasks} />
+      <TaskList style={styles.sectionTitle} tasks={tasks} />
       <StatusBar style="auto" />
     </ScrollView>
   );
 }
 
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: '#f7f0e8',
+  },
+tasks:{
+fontWeight:'bold',
+},
+
+
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  headerLeft: {
+    flexDirection: 'column',
+  },
+  greeting: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    textAlign: 'left',
+  },
+  taskCount: {
+    fontSize: 14,
+    color: '#666',
+  },
+  profileImage: {
+    width: 50,
+    height: 50,
+    borderRadius: 20,
+    overflow: 'hidden',
+    borderWidth: 1,
+    borderColor: '#f7f0e8',
+    backgroundColor: 'white',
+  },
+  searchBarContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  searchBar: {
+    flex: 1,
+    borderWidth: 1,
+    borderColor: '#f7f0e8',
+    borderRadius: 5,
+    padding: 10,
+    marginRight: 10,
+    backgroundColor: 'white',
+    fontSize: 15,
+    fontWeight: 'bold',
+    paddingLeft: 30,
+  },
+  searchIcon: {
+    position: 'absolute',
+    left: 10,
+    width: 20,
+    height: 20,
+  },
+  listButton: {
+    width: 40,
+    height: 40,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#f7f0e8',
+    backgroundColor: 'white',
+  },
+  sectionTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  categories: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    marginBottom: 20,
+  },
+  categoryCard: {
+    width: '30%',
+    height:'30%',
+    backgroundColor: '#fff',
+    borderRadius: 8,
+    padding: 10,
+    marginBottom: 10,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+    elevation: 3,
+  },
+  categoryIcon: {
+    width: 80,
+    height: 80,
+    marginBottom: 10,
+  },
+  categoryTitle: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 5,
+    textAlign: 'center',
+  },
+  categorySubtitle: {
+    fontSize: 12,
+    color: '#666',
+    textAlign: 'center',
+  },
+  taskItem: {
+    backgroundColor: '#fff',
+    padding: 15,
+    borderRadius: 5,
+    marginVertical: 5,
+    flexDirection: 'row',
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+    elevation: 2,
+  },
+  taskImage: {
+    width: 40,
+    height: 40,
+    marginRight: 10,
+    borderRadius: 5,
+  },
+  taskText: {
+    fontSize: 16,
+  },
+});
