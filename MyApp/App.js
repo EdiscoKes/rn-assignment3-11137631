@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, TextInput, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import TaskList from './TaskList';
-import Category from './Category';
+import TaskList from './Components/TaskList';
+import Category from './Components/Category';
 
 const initialTasks = [
   { task: 'Morning jog' },
